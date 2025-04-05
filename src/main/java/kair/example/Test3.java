@@ -8,9 +8,14 @@ public class Test3 {
         // application context
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("kair.example");
         // get bean
-        Pet pet = context.getBean(Pet.class);
+        Pet pet1 = context.getBean("cat", Pet.class);
+        Pet pet2 = context.getBean("dog", Pet.class);
 
-        Person person = new Person(pet);
+
+        Person person = new Person(pet1);
         person.callYourPet();
+
+        Person person2 = new Person(pet2);
+        person2.callYourPet();
     }
 }
