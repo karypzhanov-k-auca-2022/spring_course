@@ -1,9 +1,15 @@
 package kair.example;
 
-public class Person {
-    private Pet pet;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-    public Person(Pet pet) {
+@Component
+public class Person {
+    private final Pet pet;
+
+    @Autowired
+    public Person(@Qualifier("cat") Pet pet) {
         this.pet = pet;
     }
 
