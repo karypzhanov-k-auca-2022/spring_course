@@ -3,6 +3,7 @@ package kair.example;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.w3c.dom.ls.LSOutput;
 
 @Component
 public class Person {
@@ -13,6 +14,7 @@ public class Person {
     public Person(@Qualifier("cat") Pet pet) {
         this.name = "Jack";
         this.pet = pet;
+        System.out.println("Person constructor");
     }
 
     @Override

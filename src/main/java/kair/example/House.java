@@ -13,6 +13,7 @@ public class House {
     public House(Person person, @Qualifier("cat") Pet pet) {
         this.person = person;
         this.pet = pet;
+        System.out.println("House constructor");
     }
 
     public Person getPerson() {
