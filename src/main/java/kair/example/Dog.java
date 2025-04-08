@@ -6,15 +6,27 @@ import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
-@Component("dog")
-//@Scope("prototype")
+@Component
+@Scope("prototype")
 public class Dog implements Pet {
-    private final String name;
+    private String name;
 
-    @Autowired
+    public Dog() {
+        System.out.println("Dog default constructor");
+    }
+
+    @Autowired(required = false)
     public Dog(String name) {
         this.name = name;
         System.out.println("Dog constructor");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -24,9 +36,7 @@ public class Dog implements Pet {
 
     @Override
     public String toString() {
-        return "Dog{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Dog{name='" + name + "'}";
     }
 
     @Override

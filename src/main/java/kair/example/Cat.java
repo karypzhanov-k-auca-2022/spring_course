@@ -1,11 +1,13 @@
 package kair.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("cat")
+@Scope("prototype")
 public class Cat implements Pet {
-    private final String name;
+    private String name;
 
     @Autowired
     public Cat() {
@@ -23,5 +25,13 @@ public class Cat implements Pet {
         return "Cat{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }
