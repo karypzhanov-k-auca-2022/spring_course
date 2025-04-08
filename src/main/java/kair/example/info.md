@@ -29,3 +29,5 @@ employee.setHouse(house);
 
 ## Dependency Injection 
 if my classes are dependent on each other, then i can't manually create them
+
+`@Autowired` ищет в контейнере Spring бины подходящего типа для внедрения. Эти бины могли быть созданы с помощью аннотаций `@Component`, `@Service`, `@Repository`, `@Controller`, или зарегистрированы программно через конфигурационные классы с `@Bean`.

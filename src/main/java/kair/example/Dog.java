@@ -9,7 +9,7 @@ import jakarta.annotation.PreDestroy;
 
 import java.util.Objects;
 
-@Component
+@Component("dog")
 @Scope("prototype")
 public class Dog implements Pet {
     private String name;
