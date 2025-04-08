@@ -7,8 +7,8 @@ public class Test5 {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("kair.example");
 
         Dog myDog1 = context.getBean(Dog.class);
-        myDog1.setName("Buddy");
-
+        myDog1.setName("Bobik");
+        
         Dog myDog2 = context.getBean(Dog.class);
         myDog2.setName("Charlie");
 
@@ -20,7 +20,8 @@ public class Test5 {
         System.out.println("------------------");
 
         Cat myCat1 = context.getBean(Cat.class);
-        myCat1.setName("Whiskers");
+        System.out.println("Cat1 initial name: " + myCat1.getName());
+        
         Cat myCat2 = context.getBean(Cat.class);
         myCat2.setName("Mittens");
 

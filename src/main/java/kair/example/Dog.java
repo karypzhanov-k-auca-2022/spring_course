@@ -1,8 +1,11 @@
 package kair.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 import java.util.Objects;
 
@@ -11,14 +14,10 @@ import java.util.Objects;
 public class Dog implements Pet {
     private String name;
 
-    public Dog() {
-        System.out.println("Dog default constructor");
-    }
-
-    @Autowired(required = false)
-    public Dog(String name) {
+    @Autowired
+    public Dog(@Value("Default Dog name") String name) {
         this.name = name;
-        System.out.println("Dog constructor");
+        System.out.println("Dog constructor with name: " + name);
     }
 
     public String getName() {
@@ -27,6 +26,16 @@ public class Dog implements Pet {
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    @PostConstruct
+    public void init() {
+        System.out.println("Dog bean is initialized");
+    }
+    
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Dog bean is destroyed");
     }
 
     @Override

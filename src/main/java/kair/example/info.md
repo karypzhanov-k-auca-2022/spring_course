@@ -21,3 +21,11 @@ Door door = new Door();
 house.setDoor(door);
 employee.setHouse(house);
 ```
+
+# 08.04.25
+## Spting Init and Destroy methods
+- `@PostConstruct` - method will be called after the bean is created and all dependencies are injected.
+- `@PreDestroy` - method will be called before the bean is destroyed.
+
+## Dependency Injection 
+if my classes are dependent on each other, then i can't manually create them
