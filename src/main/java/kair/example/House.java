@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 public class House {
+    private String name;
     private Person person;
     private Pet pet;
 
