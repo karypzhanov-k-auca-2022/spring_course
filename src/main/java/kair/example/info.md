@@ -23,7 +23,8 @@ employee.setHouse(house);
 ```
 
 # 08.04.25
-## Spting Init and Destroy methods
+## Spring Init and Destroy methods 
+### Always `VOID` and `NO PARAMETERS`
 - `@PostConstruct` - method will be called after the bean is created and all dependencies are injected.
 - `@PreDestroy` - method will be called before the bean is destroyed.
 
