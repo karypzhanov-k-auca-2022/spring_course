@@ -4,8 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Test7 {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context =
-            new AnnotationConfigApplicationContext("kair.example");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("kair.example");
 
         try {
             House myHouse = context.getBean(House.class);
@@ -15,12 +14,14 @@ public class Test7 {
             System.out.println("House details:");
             System.out.println(myHouse);
 
-            Person resident = myHouse.getPerson();
-            System.out.println("Resident: " + resident);
+            Person person = myHouse.getPerson();
+            Pet personPet = person.getPet();
+            System.out.println("Pet's name: " + personPet.getName());
 
             Pet pet = myHouse.getPet();
             System.out.println("Pet says: ");
             pet.say();
+
         } finally {
             context.close();
         }
