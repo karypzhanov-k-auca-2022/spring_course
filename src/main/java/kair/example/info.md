@@ -32,3 +32,10 @@ employee.setHouse(house);
 if my classes are dependent on each other, then i can't manually create them
 
 `@Autowired` ищет в контейнере Spring бины подходящего типа для внедрения. Эти бины могли быть созданы с помощью аннотаций `@Component`, `@Service`, `@Repository`, `@Controller`, или зарегистрированы программно через конфигурационные классы с `@Bean`.
+
+# 15.04.25
+## Spring 
+if `Dog` and `Cat` are `@Component`  then `Pet` can be `@Autowired` with `@Qualifier` to specify which one to use.
+
+`@Autowired` - looking for a bean with `@Component`
+
